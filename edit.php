@@ -19,7 +19,7 @@
             }else {
                 $image_final_name = time() . md5($image_name) . "." . $image_ext;
                 move_uploaded_file($image_tmp_name, 'images/' . $image_final_name);
-                unlink("images/$old_image");   
+                unlink("images/$old_image");
             }
         }else {
             $image_final_name = $old_image;

@@ -1,13 +1,7 @@
 <?php
-    session_start();
     include_once('resources/header.php');
     include_once('resources/connection.php');
     $data = $mySql->query("SELECT* FROM member_info");
-    $email = $_SESSION['email'];
-    $pass = $_SESSION['password'];
-    if (empty($email) or empty($pass)) {
-        header("location:login.php");
-    }
 
 ?>
 

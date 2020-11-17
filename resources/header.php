@@ -21,12 +21,17 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
                     </li>
+                    <?php if(!empty($_SESSION['email']) or !empty($_SESSION['password'])) { ?>
                     <li class="nav-item active">
                         <a class="nav-link" href="info.php">Member Information</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="add_data.php">Add Member</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="logout.php">Logout</a>
+                    </li>
+                    <?php } ?>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
