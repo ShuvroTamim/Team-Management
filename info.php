@@ -27,7 +27,7 @@
                 <td><?php echo $dt['Job']; ?></td>
                 <td><?php echo $dt['Description']; ?></td>
                 <td>
-                    <a href="" class="btn btn-primary">Edit</a>
+                    <a href="edit.php?id=<?php echo $dt['ID']?>" class="btn btn-primary">Edit</a>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal<?php echo $dt['ID']; ?>">
                         Delete
                     </button>

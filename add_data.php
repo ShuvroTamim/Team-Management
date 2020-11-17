@@ -21,7 +21,7 @@
             $mySql->query("INSERT INTO member_info(`Name`, `Image`, `Job`, `Description`) 
             VALUES('$name', '$image_final_name', '$job', '$desc')");
             move_uploaded_file($image_tmp_name, 'images/' . $image_final_name);
-            $success = "Image uploaded successfully.";
+            $success = "Data Inserted Successfully.";
         }
     }
 ?>
