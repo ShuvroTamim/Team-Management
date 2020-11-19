@@ -1,4 +1,5 @@
 <?php
+    include_once('resources/userHeader.php');
     include_once('resources/bootstrap.php');
     include_once('resources/connection.php');
 

@@ -1,5 +1,5 @@
 <?php
-    include_once('resources/header.php');
+    include_once('resources/userHeader.php');
     include_once('resources/connection.php');
     $data = $mySql->query("SELECT* FROM member_info");
 
