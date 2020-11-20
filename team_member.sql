@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2020 at 05:33 PM
+-- Generation Time: Nov 20, 2020 at 11:07 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -32,17 +32,22 @@ CREATE TABLE `member_info` (
   `Name` text NOT NULL,
   `Image` varchar(100) DEFAULT NULL,
   `Job` varchar(20) NOT NULL,
-  `Description` varchar(500) NOT NULL
+  `Description` varchar(500) NOT NULL,
+  `Location` varchar(50) NOT NULL,
+  `Salary` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `member_info`
 --
 
-INSERT INTO `member_info` (`ID`, `Name`, `Image`, `Job`, `Description`) VALUES
-(10, 'Tamim Ahmed Shapon', '160561309343ea260706e1a3d3c49638793c39eba4.jpg', 'Web Developer', 'Have confidence in the truth, the existence, or the reliability of something, although without absolute proof that one is right in doing so: Only if one believes in something can one act purposefully.'),
-(11, 'Tipu Sultan', '1605613113b6965decae43701c23754d09bd832cd6.jpg', 'Software Developer', 'Have confidence in the truth, the existence, or the reliability of something, although without absolute proof that one is right in doing so: Only if one believes in something can one act purposefully.'),
-(13, 'Mehedi Hasan Shaown', '16056244391dab0dd8645c94262eaa0578664772ba.jpg', 'SEO', '                                                                Have confidence in the truth, the existence, or the reliability of something, although without absolute proof that one is right in doing so: Only if one believes in something can one act purposefully.');
+INSERT INTO `member_info` (`ID`, `Name`, `Image`, `Job`, `Description`, `Location`, `Salary`) VALUES
+(10, 'Tamim Ahmed Shapon', '160561309343ea260706e1a3d3c49638793c39eba4.jpg', 'Web Developer', 'Have confidence in the truth, the existence, or the reliability of something, although without absolute proof that one is right in doing so: Only if one believes in something can one act purposefully.', 'Tangail', 75000),
+(11, 'Tipu Sultan', '1605613113b6965decae43701c23754d09bd832cd6.jpg', 'Software Developer', 'Have confidence in the truth, the existence, or the reliability of something, although without absolute proof that one is right in doing so: Only if one believes in something can one act purposefully.', 'Mymensing', 74000),
+(13, 'Mehedi Hasan Shaown', '16056244391dab0dd8645c94262eaa0578664772ba.jpg', 'SEO', '                                                                Have confidence in the truth, the existence, or the reliability of something, although without absolute proof that one is right in doing so: Only if one believes in something can one act purposefully.', 'Vola', 79000),
+(14, 'Barkatgani Dostogir', '160579345129f46897d1dd451d49c74c48d7c2d20a.jpg', 'Agriculture Engineer', 'An agricultural engineer helps to make farming sustainable, safe, and environmentally friendly. How? By analyzing agricultural operations and looking at new technologies and ways of doing things to improve land use, increase yields, and conserve resources.', 'Dinajpur', 76000),
+(15, 'Faruk Rana', '1605861386050d44b6f783fee3526949d5facd3fde.jpg', 'Pharmacist', 'Pharmacists, also known as chemists (Commonwealth English) or druggists (North American and, archaically, Commonwealth English), are health professionals who specialize in the use of medicines, as they deal with the composition, effects, mechanism of action and proper and effective use of drugs.', 'Noakhali', 83000),
+(16, 'Neyamul Kabir Utsha', '16058632871dab0dd8645c94262eaa0578664772ba.jpg', 'Software Engineer', 'Software engineering treats the approach to developing software as a formal process much like that found in traditional engineering.  Software engineers begin by analyzing user needs. They design software, deploy, test it for quality and maintain it.', 'Tangail', 78000);
 
 -- --------------------------------------------------------
 
@@ -90,7 +95,7 @@ ALTER TABLE `reg_info`
 -- AUTO_INCREMENT for table `member_info`
 --
 ALTER TABLE `member_info`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `reg_info`

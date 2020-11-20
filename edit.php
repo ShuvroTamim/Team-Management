@@ -27,18 +27,22 @@
 
         $job = $_POST['job'];
         $desc = $_POST['description'];
+        $location = $_POST['location'];
+        $salary = $_POST['salary'];
 
         // Form Validation
         if (empty($name) or empty($job) or empty($desc)) {
             $error = "Field must not be empty!";
         }else {
-            $mySql->query("UPDATE member_info SET `Name`='$name', `Image` = '$image_final_name', `Job`='$job', `Description`='$desc' WHERE ID = $id ");
+            $mySql->query("UPDATE member_info SET `Name`='$name',
+             `Image` = '$image_final_name', `Job`='$job', `Description`='$desc', 
+             `Location`='$location', `Salary`='$salary' WHERE ID = $id ");
             $success = "Data Updated Successfully.";
         }
     }
 ?>
 
-    <div class="container mt-5">
+    <div class="container mt-3">
 
         <?php
             if (isset($error)) {
@@ -67,6 +71,14 @@
             <div class="form-group">
                 <textarea name="description" id="" rows="6" class="form-control" placeholder="Enter Description">
                 <?php echo $dt['Description']; ?></textarea>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="location" placeholder="Enter Location"
+                value="<?php echo $dt['Location']; ?>">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="salary" placeholder="Enter Salary"
+                value="<?php echo $dt['Salary']; ?>">
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-success" name="submit" value="Update">

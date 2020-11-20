@@ -11,15 +11,17 @@
         $image_final_name = time() . md5($image_name) . "." . $image_ext;
         $job = $_POST['job'];
         $desc = $_POST['description'];
+        $location = $_POST['location'];
+        $salary = $_POST['salary'];
 
         // Form Validation
-        if (empty($name) or empty($image_name) or empty($job) or empty($desc)) {
+        if (empty($name) or empty($image_name) or empty($job) or empty($desc) or empty($location) or empty($salary)) {
             $error = "Field must not be empty!";
         }elseif (in_array($image_ext, ['jpg', 'png', 'jpeg', 'gif']) == false) {
             $error = "Image is invalid.";
         }else {
-            $mySql->query("INSERT INTO member_info(`Name`, `Image`, `Job`, `Description`) 
-            VALUES('$name', '$image_final_name', '$job', '$desc')");
+            $mySql->query("INSERT INTO member_info(`Name`, `Image`, `Job`, `Description`, `Location`, `Salary`) 
+            VALUES('$name', '$image_final_name', '$job', '$desc', '$location', $salary)");
             move_uploaded_file($image_tmp_name, 'images/' . $image_final_name);
             $success = "Data Inserted Successfully.";
         }
@@ -49,6 +51,12 @@
             </div>
             <div class="form-group">
                 <textarea name="description" id="" rows="6" class="form-control" placeholder="Enter Description"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="location" placeholder="Enter Location">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="salary" placeholder="Enter Salary">
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-success" name="submit">
