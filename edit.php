@@ -31,7 +31,9 @@
         $salary = $_POST['salary'];
 
         // Form Validation
-        if (empty($name) or empty($job) or empty($desc)) {
+        if (!empty($error)) {
+            echo "";
+        }elseif (empty($name) or empty($job) or empty($desc)) {
             $error = "Field must not be empty!";
         }else {
             $mySql->query("UPDATE member_info SET `Name`='$name',
@@ -46,10 +48,10 @@
 
         <?php
             if (isset($error)) {
-                echo "<h3 class='alert alert-danger text-center w-75 mx-auto'>" . $error . "</h3>";
+                echo "<h3 class='alert alert-danger text-center w-50 mx-auto' style='font-size:16px; padding: 2px;'>" . $error . "</h3>";
             }
             if (isset($success)) {
-                echo "<h3 class='alert alert-success text-center w-75 mx-auto'>" . $success . "</h3>";
+                echo "<h3 class='alert alert-success text-center w-50 mx-auto' style='font-size:16px; padding: 2px;'>" . $success . "</h3>";
             }
         ?>
 
