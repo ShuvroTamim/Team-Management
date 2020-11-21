@@ -6,7 +6,7 @@
     $email = $_SESSION['email'];
     $pass = $_SESSION['password'];
     if (empty($email) or empty($pass)) {
-        header("location:login.php");
+        header("location:userPage.php");
     }
 
 ?>
