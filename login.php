@@ -29,10 +29,10 @@
 
         <?php
             if (isset($error)) {
-                echo "<h3 class='alert alert-danger text-center w-75 mx-auto'>" . $error . "</h3>";
+                echo "<h3 class='alert alert-danger text-center w-50 mx-auto' style='font-size:16px; padding: 2px;'>" . $error . "</h3>";
             }
             if (isset($success)) {
-                echo "<h3 class='alert alert-success text-center w-75 mx-auto'>" . $success . "</h3>";
+                echo "<h3 class='alert alert-success text-center w-50 mx-auto' style='font-size:16px; padding: 2px;'>" . $success . "</h3>";
             }
         ?>
 
